@@ -1,7 +1,7 @@
 # VERSION               := $(shell echo $(shell git describe --tags) | sed 's/^v//')
 VERSION 			  ?= manual
 COMMIT                := $(shell git log -1 --format='%H')
-TOOLS_DESTDIR         ?= $(GOPATH)/bin/stats-exporter
+TOOLS_DESTDIR         ?= ./bin/stats-exporter
 BUILD_FLAGS 		  := -ldflags "-X main.buildHash=${COMMIT} -X util.BuildVersion=${VERSION}"
 
 build: go.sum
